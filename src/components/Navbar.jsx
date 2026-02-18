@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Navbar = () => {
+export const Navbar = ({darkTheme, setDarkTheme}) => {
   return (
     <div className="p-5 pb-0 flex flex-wrap sm:justify-between justify-center items-center border-b dark:border-gray-700">
         <div className="flex justify-between items-center space-x-5 w-screen"/>
@@ -10,7 +10,9 @@ export const Navbar = () => {
                     Google 🔎
                 </p>
             </Link>
-        <h1>Navbar</h1>
+            <button type="button" onClick={() => setDarkTheme(!darkTheme)}>
+                {darkTheme ? 'Light' : 'Dark'}
+            </button>
     </div>
   );
 }
